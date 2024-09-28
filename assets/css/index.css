@@ -1,0 +1,78 @@
+header {
+  height: 322px;
+  width: 100%;
+}
+header .header-container {
+  width: 100%;
+}
+header .header-menu {
+  background-color: #000000;
+  height: 50px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+header .banner {
+  height: 221px;
+  background-color: red;
+  border-bottom: 50px solid black;
+}
+.current-date img {
+  margin-right: 10px;
+}
+
+.current-time {
+  background-color: red;
+  width: 133px;
+  height: 27px;
+  margin-left: 20px;
+  border-radius: 2px;
+  margin-top: 1px;
+}
+.current-time span {
+  margin-left: 10px;
+  padding-top: 2px;
+}
+.current-time span p {
+  font-weight: 600;
+}
+.current-time span img {
+  margin-right: 6px;
+}
+
+header ul, .current-date, .current-time span {
+  display: flex;
+  align-items: center;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.main {
+  width: 1570px;
+}
+
+html {
+  background-color: #f0f0f1;
+}
+
+#wrapper {
+  height: auto;
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+  color: white;
+  font-size: 15px;
+  font-family: "Open Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  font-weight: 500;
+}
+
+ul,
+ol {
+  list-style: none;
+}
