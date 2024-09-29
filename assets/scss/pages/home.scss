@@ -1,0 +1,9 @@
+@use "../extends.scss";
+.tags {
+    @extend %p200;
+    @extend %flex;
+    background-color: #e1e1e1;
+    ul {
+        @extend %flex;
+    }
+}

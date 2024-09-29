@@ -5,10 +5,15 @@ class ThemeAssets
     public function enqueue_assets()
     {
         add_action('wp_enqueue_scripts', function () {
-            wp_enqueue_style('index', get_template_directory_uri() . '/assets/css/index.css');
-            wp_enqueue_style('adaptive', get_template_directory_uri() . '/assets/css/adaptive.css');
+            $theme_root_url = get_template_directory_uri();
+            wp_enqueue_style('index', $theme_root_url . '/assets/css/index.css');
+            wp_enqueue_style('adaptive', $theme_root_url . '/assets/css/adaptive.css');
             wp_enqueue_style('fonts', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
-            wp_enqueue_script('main', get_template_directory_uri() . "/assets/js/main.js",);
+            wp_enqueue_script('header', $theme_root_url . "/assets/js/header.js",);
+            if (is_front_page()) {
+                wp_enqueue_script("home_js", $theme_root_url . './assets/js/main.js');
+                wp_enqueue_style("home_css", $theme_root_url . '/assets/pages/home.css');
+            }
         });
     }
 
@@ -54,3 +59,12 @@ class ThemeAssets
 $theme_assets = new ThemeAssets();
 $theme_assets->enqueue_assets();
 $theme_assets->add_theme_supports();
+
+function register_menus()
+{
+    register_nav_menus([
+        "menu" => "Header menu",
+    ]);
+}
+
+add_action("init", "register_menus");

@@ -1,0 +1,12 @@
+.tags {
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+.tags, .tags ul {
+  display: flex;
+}
+
+.tags {
+  background-color: #e1e1e1;
+}

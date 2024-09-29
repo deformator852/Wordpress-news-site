@@ -1,25 +1,50 @@
 header .header-menu, header .banner {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+header #menu-header-menu, header .header-menu, header .date, .current-date, .current-time, .socials, .socials ul {
+  display: flex;
 }
 
 header {
   width: 100%;
+}
+header .current-menu-item, header .menu-item:hover {
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  height: 68px;
+  background-color: #202020;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+header #menu-header-menu {
+  flex-wrap: wrap;
+  align-items: center;
+}
+header .menu-item {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 0 1.125rem;
+}
+header a {
+  color: #fff;
 }
 header .header-container {
   width: 100%;
 }
 header .header-menu {
   background-color: #000000;
-  height: 50px;
+  height: 70px;
   padding-top: 10px;
   padding-bottom: 10px;
   justify-content: space-between;
 }
 header .banner {
-  height: 251px;
+  height: 211px;
   background-color: red;
-  border-bottom: 50px solid black;
   padding-top: 15px;
 }
 header .banner h1 {
@@ -53,6 +78,9 @@ header .banner p {
 .current-time p {
   font-weight: 600;
 }
+.current-time #time {
+  margin-left: 6px;
+}
 
 .socials p {
   font-size: 1rem;
@@ -68,6 +96,5 @@ header .banner p {
 }
 
 header .header-menu, header .date, .current-date, .current-time, .socials, .socials ul {
-  display: flex;
   align-items: center;
 }

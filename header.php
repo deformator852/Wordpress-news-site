@@ -22,7 +22,7 @@
                     </li>
                 </ul>
                 <div class="socials">
-                    <p>Follow Us <img src="" alt=""></p>
+                    <p>Follow Us</p>
                     <ul>
                         <li><a href=""><i class="fa-brands fa-facebook fa-2x"></i></a></li>
                         <li><a href=""></a><i class="fa-brands fa-twitter fa-2x"></i></li>
@@ -35,8 +35,10 @@
                 <div class="banner-container">
                     <h1 class="site-title">Newsio</h1>
                     <p class="site-description">Newsio is a clean, modern blog news and magazine WordPress theme that is perfect for any Blog/Magazine, news, and even for all variants of publishers websites.</p>
-
                 </div>
+            </div>
+            <div class="header-menu">
+                <?php wp_nav_menu(["theme location" => "Header menu", "container" => "nav"]) ?>
             </div>
         </div>
     </header>
