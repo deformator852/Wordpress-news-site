@@ -1,8 +1,3 @@
-function main() {
-  document.addEventListener("DOMContentLoaded", updateTime);
-  setInterval(updateTime, 1000);
-}
-
 function updateTime() {
   let timeElement = document.getElementById("time");
   const now = new Date();
@@ -15,6 +10,11 @@ function updateTime() {
   minutes = String(minutes).padStart(2, "0");
   seconds = String(seconds).padStart(2, "0");
   timeElement.textContent = `${hours}:${minutes}:${seconds} ${ampm}`;
+}
+
+function main() {
+  document.addEventListener("DOMContentLoaded", updateTime);
+  setInterval(updateTime, 1000);
 }
 
 main();

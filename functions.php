@@ -7,8 +7,7 @@ class ThemeAssets
         add_action('wp_enqueue_scripts', function () {
             wp_enqueue_style('index', get_template_directory_uri() . '/assets/css/index.css');
             wp_enqueue_style('adaptive', get_template_directory_uri() . '/assets/css/adaptive.css');
-            wp_enqueue_style('fonts', "https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
-
+            wp_enqueue_style('fonts', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
             wp_enqueue_script('main', get_template_directory_uri() . "/assets/js/main.js",);
         });
     }

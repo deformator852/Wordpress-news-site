@@ -1,5 +1,9 @@
+header .header-menu, header .banner {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 header {
-  height: 322px;
   width: 100%;
 }
 header .header-container {
@@ -8,39 +12,62 @@ header .header-container {
 header .header-menu {
   background-color: #000000;
   height: 50px;
-  padding-left: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
+  justify-content: space-between;
 }
 header .banner {
-  height: 221px;
+  height: 251px;
   background-color: red;
   border-bottom: 50px solid black;
+  padding-top: 15px;
 }
-.current-date img {
-  margin-right: 10px;
+header .banner h1 {
+  line-height: 1.2;
+  font-weight: 700;
+  font-size: 2.875rem;
+}
+header .banner p {
+  max-width: 488px;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.current-date p {
+  margin-left: 10px;
 }
 
 .current-time {
   background-color: red;
-  width: 133px;
-  height: 27px;
   margin-left: 20px;
   border-radius: 2px;
   margin-top: 1px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
-.current-time span {
-  margin-left: 10px;
-  padding-top: 2px;
+.current-time::before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f017";
 }
-.current-time span p {
+.current-time p {
   font-weight: 600;
 }
-.current-time span img {
-  margin-right: 6px;
+
+.socials p {
+  font-size: 1rem;
+  line-height: 1;
+}
+.socials ul {
+  font-family: "Font Awesome 6 Brands";
+  font-weight: 400;
+}
+.socials ul i {
+  color: white;
+  margin-left: 12px;
 }
 
-header ul, .current-date, .current-time span {
+header .header-menu, header .date, .current-date, .current-time, .socials, .socials ul {
   display: flex;
   align-items: center;
 }
