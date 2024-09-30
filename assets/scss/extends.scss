@@ -6,3 +6,8 @@
 %flex {
     display: flex;
 }
+
+%align-elements {
+    @extend %flex;
+    align-items: center;
+}

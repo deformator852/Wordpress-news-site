@@ -7,6 +7,10 @@ header #menu-header-menu, header .header-menu, header .date, .current-date, .cur
   display: flex;
 }
 
+header .header-menu, header .date, .current-date, .current-time, .socials, .socials ul {
+  align-items: center;
+}
+
 header {
   width: 100%;
 }
@@ -93,8 +97,4 @@ header .banner p {
 .socials ul i {
   color: white;
   margin-left: 12px;
-}
-
-header .header-menu, header .date, .current-date, .current-time, .socials, .socials ul {
-  align-items: center;
 }

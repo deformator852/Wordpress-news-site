@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="header-menu">
-                <?php wp_nav_menu(["theme location" => "Header menu", "container" => "nav"]) ?>
+                <?php wp_nav_menu(["theme location" => "header-menu", "container" => "nav"]) ?>
             </div>
         </div>
     </header>
