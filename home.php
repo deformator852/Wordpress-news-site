@@ -35,31 +35,50 @@
             </div>
             <div class="last-news">
                 <div class="first-news" style="background-image: url('<?php echo get_the_post_thumbnail_url($post->ID, 'full'); ?>');">
-                    <?php
-                    $first_post = get_posts(array(
-                        'numberposts' => -1,
-                    ));
-                    if (!empty($first_post)) {
-                        $post = $first_post[0];
-                        setup_postdata($post);
-                    }
-                    ?>
-                    <?php
-                    $categories = get_the_category($post->ID);
-                    if (!empty($categories)) {
-                        echo "<ul>";
-                        foreach ($categories as $category) {
-                            echo '<li>' . esc_html($category->name) . '</li>';
+                    <div class="first-news-container">
+                        <?php
+                        $posts = get_posts(array(
+                            'numberposts' => 3,
+                        ));
+                        global $posts;
+                        setup_postdata($posts[0]);
+                        ?>
+                        <?php
+                        $categories = get_the_category($post->ID);
+                        if (!empty($categories)) {
+                            echo "<ul class='post-cats'>";
+                            foreach ($categories as $category) {
+                                echo '<li class="post-cat">' . esc_html($category->name) . '</li>';
+                            }
+                            echo "</ul>";
                         }
-                        echo "</ul>";
-                    }
-                    ?>
-                    <p class="post-title"><?php the_title(); ?></p>
+                        ?>
+                        <h3 class="post-title"><?php the_title(); ?></h3>
+                        <div class="author-published">
+                            <div class="author">
+                                <?php
+                                $author_id = get_the_author_meta('ID', $post->ID);
+                                echo get_avatar($author_id, 25);
+                                $author_name = get_the_author_meta('display_name', $author_id);
+                                echo '<span class="author-name">' . esc_html($author_name) . '</span>';
+                                ?>
+                            </div>
+                            <div class="published">
+                                <?php echo get_the_date('', $post->ID); ?>
+                            </div>
+                        </div>
+                        <?php wp_reset_postdata(); ?>
+                    </div>
                 </div>
                 <div>
                     <div class="second-news">
+                        <?php setup_postdata($posts[1]) ?>
+                        <?php wp_reset_postdata(); ?>
                     </div>
-                    <div class="third-news"></div>
+                    <div class="third-news">
+                        <?php setup_postdata($posts[2]) ?>
+                        <?php wp_reset_postdata(); ?>
+                    </div>
                 </div>
             </div>
         </div>
