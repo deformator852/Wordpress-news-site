@@ -1,9 +1,9 @@
-.tags {
+.tags, .trending, .last-news {
   padding-left: 200px;
   padding-right: 200px;
 }
 
-.tags ul, .trending .trending-menu ul, .trending .trending-menu ul li, .tags, .trending .trending-heading {
+.tags ul, .trending, .trending .trending-menu ul, .trending .trending-menu ul li, .last-news, .last-news .first-news, .tags, .trending .trending-heading {
   display: flex;
 }
 
@@ -42,7 +42,6 @@
 .trending {
   margin-top: 36px;
   width: 100%;
-  display: flex;
   justify-content: center;
   position: relative;
 }
@@ -65,8 +64,10 @@
   padding-left: 35px;
 }
 .trending .trending-menu ul {
-  flex-direction: row-reverse;
   margin-top: 9px;
+}
+.trending .trending-menu ul li {
+  margin-right: 30px;
 }
 .trending .trending-menu ul li a {
   font-weight: 600;
@@ -74,7 +75,6 @@
   line-height: 1.5;
   font-size: 1.2em;
   font-family: "Khand";
-  margin-right: 30px;
 }
 .trending .trending-menu ul li a:hover {
   color: #d40004;
@@ -98,4 +98,25 @@
 .trending-menu-post-thumbnail {
   width: 30px;
   height: 30px;
+}
+
+.last-news {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-top: 36px;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+}
+.last-news .first-news {
+  width: 1040px;
+  border: 7px solid #fff;
+  height: 750px;
+  flex-direction: column-reverse;
+}
+.last-news .second-news,
+.last-news .third-news {
+  width: 500px;
+  border: 7px solid #fff;
+  height: 370px;
 }

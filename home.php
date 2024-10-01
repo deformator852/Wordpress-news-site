@@ -27,13 +27,40 @@
                     <h5>TRENDING POSTS</h5>
                 </div>
                 <div class="triangle"></div>
-                <!-- //Сделать на jquery анимацию двигающихся постов в trending menu -->
-
                 <?php wp_nav_menu([
                     "theme_location" => "trending-menu",
                     "container" => "div",
                     "container_class" => "trending-menu"
                 ]); ?>
+            </div>
+            <div class="last-news">
+                <div class="first-news" style="background-image: url('<?php echo get_the_post_thumbnail_url($post->ID, 'full'); ?>');">
+                    <?php
+                    $first_post = get_posts(array(
+                        'numberposts' => -1,
+                    ));
+                    if (!empty($first_post)) {
+                        $post = $first_post[0];
+                        setup_postdata($post);
+                    }
+                    ?>
+                    <?php
+                    $categories = get_the_category($post->ID);
+                    if (!empty($categories)) {
+                        echo "<ul>";
+                        foreach ($categories as $category) {
+                            echo '<li>' . esc_html($category->name) . '</li>';
+                        }
+                        echo "</ul>";
+                    }
+                    ?>
+                    <p class="post-title"><?php the_title(); ?></p>
+                </div>
+                <div>
+                    <div class="second-news">
+                    </div>
+                    <div class="third-news"></div>
+                </div>
             </div>
         </div>
     </main>

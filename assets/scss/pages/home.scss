@@ -36,7 +36,8 @@
 .trending {
     margin-top: 36px;
     width: 100%;
-    display: flex;
+    @extend %flex;
+    @extend %p200;
     justify-content: center;
     position: relative;
     .trending-heading {
@@ -53,8 +54,6 @@
         letter-spacing: 1px;
     }
 
-    //Сделать на jquery анимацию двигающихся постов в trending menu
-
     .trending-menu {
         width: 1262px;
         height: 48px;
@@ -62,9 +61,9 @@
         padding-left: 35px;
         ul {
             @extend %flex;
-            flex-direction: row-reverse;
             margin-top: 9px;
             li {
+                margin-right: 30px;
                 @extend %flex;
                 a {
                     font-weight: 600;
@@ -72,7 +71,6 @@
                     line-height: 1.5;
                     font-size: 1.2em;
                     font-family: "Khand";
-                    margin-right: 30px;
                 }
                 a:hover {
                     color: #d40004;
@@ -102,4 +100,29 @@
 .trending-menu-post-thumbnail {
     width: 30px;
     height: 30px;
+}
+
+.last-news {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-top: 36px;
+    width: 100%;
+    @extend %flex;
+    @extend %p200;
+    justify-content: center;
+    position: relative;
+    .first-news {
+        width: 1040px;
+        border: 7px solid #fff;
+        height: 750px;
+        @extend %flex;
+        flex-direction: column-reverse;
+    }
+
+    .second-news,
+    .third-news {
+        width: 500px;
+        border: 7px solid #fff;
+        height: 370px;
+    }
 }
