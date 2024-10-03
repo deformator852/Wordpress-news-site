@@ -112,3 +112,12 @@ function save_category_color_field($term_id)
 }
 add_action('edited_category', 'save_category_color_field');
 add_action('created_category', 'save_category_color_field');
+
+function my_widgets_init()
+{
+    register_sidebar([
+        'name' => 'footer-bar',
+        'id' => 'footer-bar',
+    ]);
+}
+add_action("widgets_init", "my_widgets_init");

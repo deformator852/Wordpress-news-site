@@ -94,7 +94,7 @@
     border-color: transparent transparent transparent #d40004;
     position: absolute;
     top: 21%;
-    left: 463px;
+    left: 484px;
 }
 
 .trending-menu-post-thumbnail {
@@ -130,18 +130,23 @@
         width: 500px;
         border: 7px solid #fff;
         height: 370px;
-        .post-title {
-            line-height: 1.2;
-            font-weight: 700;
-            letter-spacing: 1px;
-            font-family: "Khand";
-            font-size: 1rem;
-            margin-left: 20px;
-        }
     }
 
     .second-news {
         margin-bottom: 10px;
+    }
+}
+
+.second-news,
+.third-news,
+.featured-news-item {
+    .post-title {
+        line-height: 1.2;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-family: "Khand";
+        font-size: 1rem;
+        margin-left: 20px;
     }
 }
 
@@ -169,6 +174,7 @@
     margin-bottom: 30px;
     position: relative;
     z-index: 1;
+    transition: margin-bottom 0.4s ease-in-out;
 }
 
 .author-published {
@@ -204,4 +210,82 @@
     flex-direction: column;
     justify-content: flex-end;
     border: 7px solid #fff;
+}
+
+.post-title:hover {
+    text-decoration: underline;
+    text-decoration-color: #d40004;
+    transition: text-decoration 200ms ease-out;
+}
+
+.featured {
+    margin-top: 36px;
+    width: 100%;
+    @extend %flex;
+    @extend %p200;
+    position: relative;
+}
+
+.featured-heading {
+    height: 48px;
+    width: 297px;
+    background-color: #d40004;
+    font-family: "Khand";
+    @extend %align-elements;
+    justify-content: center;
+    font-size: 1.375rem;
+    font-weight: 700;
+    clear: both;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+.featured-menu {
+    width: 1262px;
+    height: 48px;
+    background-color: #fff;
+    padding-right: 15px;
+    @extend %align-elements;
+    flex-direction: row-reverse;
+    .view-all {
+        width: 114px;
+        height: 30px;
+        border: 1px solid #000;
+        @extend %align-elements;
+        justify-content: center;
+        &:hover {
+            transition: background-color 0.3s ease;
+            border: none;
+            background-color: #d40004;
+        }
+        a {
+            font-size: 0.9375rem;
+            color: #1f2024;
+            letter-spacing: 0px;
+            line-height: 1.7;
+            font-weight: 700;
+        }
+        i {
+            font-family: "Font Awesome 6 Free";
+            color: black;
+            margin-left: 4px;
+        }
+    }
+}
+
+.featured-news {
+    margin-top: 36px;
+    font-size: 1rem;
+    line-height: 1.7;
+    width: 100%;
+    @extend %flex;
+    @extend %p200;
+    justify-content: center;
+    position: relative;
+
+    .news {
+        width: 365px;
+        height: 508px;
+        margin-right: 10px;
+    }
 }

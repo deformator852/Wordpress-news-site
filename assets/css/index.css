@@ -1,13 +1,13 @@
-.tags, .trending, .last-news, header .header-menu, header .banner {
+.tags, .trending, .last-news, .featured, .featured-news, header .header-menu, header .banner {
   padding-left: 200px;
   padding-right: 200px;
 }
 
-.tags ul, .trending, .trending .trending-menu ul, .trending .trending-menu ul li, .last-news, .author-published, .news, header #menu-header-menu, .tags, .trending .trending-heading, .author-published .author, header .header-menu, header .date, .current-date, .current-time, .socials, .socials ul {
+.tags ul, .trending, .trending .trending-menu ul, .trending .trending-menu ul li, .last-news, .author-published, .news, .featured, .featured-news, header #menu-header-menu, .tags, .trending .trending-heading, .author-published .author, .featured-heading, .featured-menu, .featured-menu .view-all, header .header-menu, header .date, .current-date, .current-time, .socials, .socials ul {
   display: flex;
 }
 
-.tags, .trending .trending-heading, .author-published .author, header .header-menu, header .date, .current-date, .current-time, .socials, .socials ul {
+.tags, .trending .trending-heading, .author-published .author, .featured-heading, .featured-menu, .featured-menu .view-all, header .header-menu, header .date, .current-date, .current-time, .socials, .socials ul {
   align-items: center;
 }
 
@@ -223,7 +223,7 @@ ol {
   border-color: transparent transparent transparent #d40004;
   position: absolute;
   top: 21%;
-  left: 463px;
+  left: 484px;
 }
 
 .trending-menu-post-thumbnail {
@@ -258,17 +258,19 @@ ol {
   border: 7px solid #fff;
   height: 370px;
 }
-.last-news .second-news .post-title,
-.last-news .third-news .post-title {
+.last-news .second-news {
+  margin-bottom: 10px;
+}
+
+.second-news .post-title,
+.third-news .post-title,
+.featured-news-item .post-title {
   line-height: 1.2;
   font-weight: 700;
   letter-spacing: 1px;
   font-family: "Khand";
   font-size: 1rem;
   margin-left: 20px;
-}
-.last-news .second-news {
-  margin-bottom: 10px;
 }
 
 .post-cats {
@@ -295,6 +297,7 @@ ol {
   margin-bottom: 30px;
   position: relative;
   z-index: 1;
+  transition: margin-bottom 0.4s ease-in-out;
 }
 
 .author-published img {
@@ -322,4 +325,74 @@ ol {
   height: 50%;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
   z-index: 0;
+}
+
+.post-title:hover {
+  text-decoration: underline;
+  text-decoration-color: #d40004;
+  transition: text-decoration 200ms ease-out;
+}
+
+.featured {
+  margin-top: 36px;
+  width: 100%;
+  position: relative;
+}
+
+.featured-heading {
+  height: 48px;
+  width: 297px;
+  background-color: #d40004;
+  font-family: "Khand";
+  justify-content: center;
+  font-size: 1.375rem;
+  font-weight: 700;
+  clear: both;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+
+.featured-menu {
+  width: 1262px;
+  height: 48px;
+  background-color: #fff;
+  padding-right: 15px;
+  flex-direction: row-reverse;
+}
+.featured-menu .view-all {
+  width: 114px;
+  height: 30px;
+  border: 1px solid #000;
+  justify-content: center;
+}
+.featured-menu .view-all:hover {
+  transition: background-color 0.3s ease;
+  border: none;
+  background-color: #d40004;
+}
+.featured-menu .view-all a {
+  font-size: 0.9375rem;
+  color: #1f2024;
+  letter-spacing: 0px;
+  line-height: 1.7;
+  font-weight: 700;
+}
+.featured-menu .view-all i {
+  font-family: "Font Awesome 6 Free";
+  color: black;
+  margin-left: 4px;
+}
+
+.featured-news {
+  margin-top: 36px;
+  font-size: 1rem;
+  line-height: 1.7;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+}
+.featured-news .news {
+  width: 365px;
+  height: 508px;
+  margin-right: 10px;
 }
