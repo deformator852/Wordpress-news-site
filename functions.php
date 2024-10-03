@@ -9,10 +9,11 @@ class ThemeAssets
             wp_enqueue_style('adaptive', get_template_directory_uri() . '/assets/css/adaptive.css');
             wp_enqueue_style('fonts', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
             wp_enqueue_style("khand", "https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&display=swap");
-
+            // wp_enqueue_script('jquery');
             wp_enqueue_script('header', get_template_directory_uri() . "/assets/js/header.js",);
             if (is_front_page()) {
-                wp_enqueue_script("home_js", get_template_directory_uri() . '/assets/js/home.js');
+                wp_enqueue_script("custom-jquery", src: get_template_directory_uri() . '/assets/js/jquery-3.7.1.slim.js');
+                wp_enqueue_script("home_js", src: get_template_directory_uri() . '/assets/js/home.js');
                 wp_enqueue_style("home_css", get_template_directory_uri() . '/assets/pages/home.css');
             }
         });
@@ -83,3 +84,31 @@ function add_menu_thumbnail($item_output, $item, $depth, $args)
     return $item_output;
 }
 add_filter('walker_nav_menu_start_el', 'add_menu_thumbnail', 10, 4);
+
+function add_category_color_field($term)
+{
+    $term_id = $term->term_id;
+    $color = get_term_meta($term_id, 'category_color', true);
+?>
+    <tr class="form-field">
+        <th scope="row" valign="top">
+            <label for="category_color"><?php _e('Category Color', 'your-theme-textdomain'); ?></label>
+        </th>
+        <td>
+            <input type="color" name="category_color" id="category_color" value="<?php echo esc_attr($color) ? esc_attr($color) : '#ffffff'; ?>">
+            <p class="description"><?php _e('Select a color for this category.', 'your-theme-textdomain'); ?></p>
+        </td>
+    </tr>
+<?php
+}
+add_action('category_edit_form_fields', 'add_category_color_field');
+add_action('category_add_form_fields', 'add_category_color_field');
+
+function save_category_color_field($term_id)
+{
+    if (isset($_POST['category_color'])) {
+        update_term_meta($term_id, 'category_color', sanitize_hex_color($_POST['category_color']));
+    }
+}
+add_action('edited_category', 'save_category_color_field');
+add_action('created_category', 'save_category_color_field');
