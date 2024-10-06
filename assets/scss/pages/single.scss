@@ -1,0 +1,72 @@
+@use "../extends.scss";
+.page-breadcrumb {
+    @extend %p200;
+    margin-top: 36px;
+    .page-breadcrumb__container {
+        width: 1570px;
+        height: 44.4px;
+        background-color: #fff;
+        @extend %align-elements;
+    }
+    .active-link {
+        &::before {
+            color: #999;
+            content: "•";
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 0.6875rem;
+        }
+    }
+    .page-breadcumb__links {
+        @extend %align-elements;
+        margin-left: 20px;
+    }
+
+    .home-link a,
+    .active-link a {
+        line-height: 1.5;
+        font-size: 0.9375rem;
+        font-weight: 500;
+    }
+
+    .active-link a {
+        color: #d40004;
+    }
+
+    .home-link a {
+        color: #000;
+        transition: 0.3s ease;
+        &:hover {
+            color: #d40004;
+        }
+    }
+}
+
+.single-post {
+    @extend %p200;
+    position: relative;
+    margin-top: 36px;
+    .single-post__container {
+        width: 1570px;
+        min-height: 1125px;
+        background-color: #fff;
+    }
+    .author-published {
+        color: gray;
+    }
+    .post-header {
+        h3 {
+            margin-top: 6px;
+            margin-left: 20px;
+            line-height: 1.3;
+            font-weight: 700;
+            font-family: "Khand";
+            font-size: 2.5rem;
+        }
+        color: #000;
+    }
+
+    .post-cats {
+        padding-top: 15px;
+    }
+}

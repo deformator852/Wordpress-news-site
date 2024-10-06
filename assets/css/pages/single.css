@@ -1,0 +1,75 @@
+@charset "UTF-8";
+.page-breadcrumb, .single-post {
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+.page-breadcrumb .page-breadcrumb__container, .page-breadcrumb .page-breadcumb__links {
+  display: flex;
+}
+
+.page-breadcrumb .page-breadcrumb__container, .page-breadcrumb .page-breadcumb__links {
+  align-items: center;
+}
+
+.page-breadcrumb {
+  margin-top: 36px;
+}
+.page-breadcrumb .page-breadcrumb__container {
+  width: 1570px;
+  height: 44.4px;
+  background-color: #fff;
+}
+.page-breadcrumb .active-link::before {
+  color: #999;
+  content: "•";
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 0.6875rem;
+}
+.page-breadcrumb .page-breadcumb__links {
+  margin-left: 20px;
+}
+.page-breadcrumb .home-link a,
+.page-breadcrumb .active-link a {
+  line-height: 1.5;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+.page-breadcrumb .active-link a {
+  color: #d40004;
+}
+.page-breadcrumb .home-link a {
+  color: #000;
+  transition: 0.3s ease;
+}
+.page-breadcrumb .home-link a:hover {
+  color: #d40004;
+}
+
+.single-post {
+  position: relative;
+  margin-top: 36px;
+}
+.single-post .single-post__container {
+  width: 1570px;
+  min-height: 1125px;
+  background-color: #fff;
+}
+.single-post .author-published {
+  color: gray;
+}
+.single-post .post-header {
+  color: #000;
+}
+.single-post .post-header h3 {
+  margin-top: 6px;
+  margin-left: 20px;
+  line-height: 1.3;
+  font-weight: 700;
+  font-family: "Khand";
+  font-size: 2.5rem;
+}
+.single-post .post-cats {
+  padding-top: 15px;
+}

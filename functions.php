@@ -9,12 +9,14 @@ class ThemeAssets
             wp_enqueue_style('adaptive', get_template_directory_uri() . '/assets/css/adaptive.css');
             wp_enqueue_style('fonts', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
             wp_enqueue_style("khand", "https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&display=swap");
-            // wp_enqueue_script('jquery');
             wp_enqueue_script('header', get_template_directory_uri() . "/assets/js/header.js",);
             if (is_front_page()) {
                 wp_enqueue_script("custom-jquery", src: get_template_directory_uri() . '/assets/js/jquery-3.7.1.slim.js');
                 wp_enqueue_script("home_js", src: get_template_directory_uri() . '/assets/js/home.js');
                 wp_enqueue_style("home_css", get_template_directory_uri() . '/assets/pages/home.css');
+            }
+            if (is_single()) {
+                wp_enqueue_style("single", get_template_directory_uri() . '/assets/css/pages/single.css');
             }
         });
     }

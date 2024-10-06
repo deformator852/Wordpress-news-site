@@ -3,11 +3,11 @@
   padding-right: 200px;
 }
 
-.tags ul, .trending, .trending .trending-menu ul, .trending .trending-menu ul li, .last-news, .author-published, .news, .featured, .featured-news, header #menu-header-menu, .tags, .trending .trending-heading, .author-published .author, .featured-heading, .featured-menu, .featured-menu .view-all, header .header-menu, header .date, .current-date, .current-time, .socials, .socials ul {
+.tags ul, .trending, .trending .trending-menu ul, .trending .trending-menu ul li, .last-news, .featured, .featured-news, .news, header #menu-header-menu, .tags, .trending .trending-heading, .featured-heading, .featured-menu, .featured-menu .view-all, .author-published, .author-published .author, header .header-menu, header .date, .current-date, .current-time, .socials, .socials ul {
   display: flex;
 }
 
-.tags, .trending .trending-heading, .author-published .author, .featured-heading, .featured-menu, .featured-menu .view-all, header .header-menu, header .date, .current-date, .current-time, .socials, .socials ul {
+.tags, .trending .trending-heading, .featured-heading, .featured-menu, .featured-menu .view-all, .author-published, .author-published .author, header .header-menu, header .date, .current-date, .current-time, .socials, .socials ul {
   align-items: center;
 }
 
@@ -142,6 +142,43 @@ ol {
   list-style: none;
 }
 
+.news {
+  transition: background-size 0.4s ease-in-out;
+  position: relative;
+  z-index: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: 7px solid #fff;
+}
+.news:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+  z-index: 0;
+}
+
+.news-container {
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+  transition: margin-bottom 0.4s ease-in-out;
+}
+.news-container a {
+  color: #fff;
+}
+
+.author-published img {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.author-published .author,
+.author-published .published {
+  margin-left: 20px;
+}
 .tags {
   text-align: center;
   background-color: #e1e1e1;
@@ -291,40 +328,6 @@ ol {
   text-align: center;
   line-height: 1.3;
   margin-right: 7px;
-}
-
-.news-container {
-  margin-bottom: 30px;
-  position: relative;
-  z-index: 1;
-  transition: margin-bottom 0.4s ease-in-out;
-}
-
-.author-published img {
-  border-radius: 50%;
-  margin-right: 10px;
-}
-.author-published .author,
-.author-published .published {
-  margin-left: 20px;
-}
-.news {
-  transition: background-size 0.4s ease-in-out;
-  position: relative;
-  z-index: 1;
-  flex-direction: column;
-  justify-content: flex-end;
-  border: 7px solid #fff;
-}
-.news:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 50%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
-  z-index: 0;
 }
 
 .post-title:hover {

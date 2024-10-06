@@ -1,4 +1,6 @@
 @use "../extends.scss";
+@use "../common.scss";
+
 .tags {
     @extend %p200;
     @extend %align-elements;
@@ -168,48 +170,6 @@
         line-height: 1.3;
         margin-right: 7px;
     }
-}
-
-.news-container {
-    margin-bottom: 30px;
-    position: relative;
-    z-index: 1;
-    transition: margin-bottom 0.4s ease-in-out;
-}
-
-.author-published {
-    @extend %flex;
-    img {
-        border-radius: 50%;
-        margin-right: 10px;
-    }
-    .author,
-    .published {
-        margin-left: 20px;
-    }
-
-    .author {
-        @extend %align-elements;
-    }
-}
-.news {
-    transition: background-size 0.4s ease-in-out;
-    position: relative;
-    z-index: 1;
-    &:before {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 50%;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
-        z-index: 0;
-    }
-    @extend %flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    border: 7px solid #fff;
 }
 
 .post-title:hover {

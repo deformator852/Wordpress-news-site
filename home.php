@@ -55,7 +55,9 @@
 							echo "</ul>";
 						}
 						?>
-						<h3 class="post-title"><?php the_title(); ?></h3>
+						<a href="<?php the_permalink(); ?>">
+							<h3 class="post-title"><?php the_title(); ?></h3>
+						</a>
 						<div class="author-published">
 							<div class="author">
 								<?php
@@ -169,7 +171,9 @@
 									echo "</ul>";
 								}
 								?>
-								<h4 class="post-title"><?php the_title(); ?></h4>
+								<a href=<?php the_permalink(); ?>>
+									<h4 class="post-title"><?php the_title(); ?></h4>
+								</a>
 								<div class="author-published">
 									<div class="author">
 										<?php
@@ -196,6 +200,7 @@
 
 		</div>
 	</main>
+	<?php wp_footer(); ?>
 </div>
 </body>
 
